@@ -1,7 +1,6 @@
 import React from 'react';
+import Board from './components/Board'
 import './App.css';
-
-import Board from './Board'
 
 function App() {
   return (
@@ -11,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
