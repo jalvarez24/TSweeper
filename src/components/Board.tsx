@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import Cell from './Cell'
+
 interface Props {
     
 }
@@ -7,6 +9,7 @@ interface Props {
 const Board: React.FC<Props> = () => {
 
     const [board, setBoard] = useState<Array<Array<any>> | null>(null)
+    const [test, setTest] = useState([1,2,3])
     
     useEffect(() => {
         let newBoard = []
@@ -23,6 +26,13 @@ const Board: React.FC<Props> = () => {
     return (
         <div>
             Board: {board}
+            {
+                board?.map((row) => {
+                    for(let i = 0; i < row.length; i++) {
+                        console.log(i)
+                    }
+                })
+            }
         </div>
     )
 }
