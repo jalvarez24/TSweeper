@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
 interface Props {
-    
+    val?: number
 }
 
-const Cell: React.FC<Props> = () => {
+const Cell: React.FC<Props> = ({ val }) => {
 
     return (
         <div>
-            Cell
+            Cell: {val}
         </div>
     )
 }

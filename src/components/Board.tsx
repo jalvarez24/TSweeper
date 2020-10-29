@@ -23,15 +23,36 @@ const Board: React.FC<Props> = () => {
         setBoard(newBoard)
     }, [])
 
+    function getRandom(min: number = 0, max: number = 20000000) {
+        return Math.random() * (max - min) + min;
+    }
+
     return (
         <div>
             Board: {board}
             {
-                board?.map((row) => {
-                    for(let i = 0; i < row.length; i++) {
-                        console.log(i)
-                    }
+                // board?.map((row) => {
+                //     row.map((c) => {
+                //         console.log(c)
+                //         return <Cell key={getRandom()} val={c} />
+                //     })
+                // })
+                board?.map((row) => row).map((c) => {
+                    console.log(c)
+                    return <Cell /> 
                 })
+                
+                // this.state.report.map(({ monthlytarget }) => Object.entries(monthlytarget))
+                // .flat()
+                // .map(([key,value], index) => (
+                //     <tr key={index}>
+                //     </tr>
+                // ));
+                
+                    // for(let i = 0; i < row.length; i++) {
+                    //     console.log('yooooo')
+                    //     return <Cell key={getRandom()} val={row[i]} />
+                    // }
             }
         </div>
     )
