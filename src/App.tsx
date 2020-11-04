@@ -4,41 +4,9 @@ import './App.css';
 
 import { Stage, Layer, Rect, Text, Star } from 'react-konva';
 import Konva from 'konva';
-import { shapes } from 'konva/types/Shape';
 
-const RectComp = ({ color, idx, x, y, shapesArray, setShapesArray }: shapeProps) => {
-  const [moving, setMoving] = useState(false)
-  
-  function moveCurrentShapeToFront() {
-    if(setShapesArray) {
-      setShapesArray((prevState) => {
-        return [
-          ...prevState.filter((shape) => shape.idx !== idx),
-          {color, idx, x, y},
-        ]
-      })
-    }
-  }
+import RectComp from './components/RectComp'
 
-  return (
-    <Rect
-      x={x}
-      y={y}
-      width={200}
-      height={100}
-      fill={moving ? `${color}50` : color}
-      draggable
-      onDragStart={() => {
-        moveCurrentShapeToFront()
-        setMoving(true)
-      }}
-      onDragEnd={() => {
-        setMoving(false)
-      }}
-      
-    />
-  )
-}
 
 interface shapeProps {
   color: string,
@@ -78,11 +46,6 @@ function App() {
       })
     }
   }
-
-  //for bug testing only
-  useEffect(() => {
-    // console.log(shapesArray)
-  }, [shapesArray])
 
   return (
     <div className="App">
