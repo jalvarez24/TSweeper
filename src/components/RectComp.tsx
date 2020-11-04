@@ -2,6 +2,7 @@ import React, { useState, Dispatch, SetStateAction } from 'react'
 
 import { Rect } from 'react-konva';
 import Konva from 'konva';
+import { createImportSpecifier } from 'typescript';
 
 interface shapeProps {
     color: string,
@@ -32,6 +33,8 @@ const RectComp = ({ color, idx, x, y, shapesArray, setShapesArray }: shapeProps)
         y={y}
         width={200}
         height={100}
+        stroke={moving ? '#00000050' : '#000000'}
+        strokeWidth={4}
         fill={moving ? `${color}50` : color}
         draggable
         onDragStart={() => {
@@ -41,7 +44,6 @@ const RectComp = ({ color, idx, x, y, shapesArray, setShapesArray }: shapeProps)
         onDragEnd={() => {
           setMoving(false)
         }}
-        
       />
     )
   }
