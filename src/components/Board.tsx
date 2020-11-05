@@ -8,15 +8,16 @@ interface Props {
 
 const Board: React.FC<Props> = () => {
 
-    const [board, setBoard] = useState<Array<Array<any>> | null>(null)
+    const [board, setBoard] = useState<Array<Array<number>> | null>(null)
     const [test, setTest] = useState([1,2,3])
     
     useEffect(() => {
         let newBoard = []
+        let count = 1;
         for(let i = 0; i < 10; i++) {
             let newRow = []
             for(let j = 0; j < 10; j++) {
-                newRow.push(i + 1)
+                newRow.push(count++)
             } 
             newBoard.push(newRow)
         }
@@ -29,30 +30,15 @@ const Board: React.FC<Props> = () => {
 
     return (
         <div>
-            Board: {board}
+            Board:
             {
-                // board?.map((row) => {
-                //     row.map((c) => {
-                //         console.log(c)
-                //         return <Cell key={getRandom()} val={c} />
-                //     })
-                // })
-                board?.map((row) => row).map((c) => {
-                    console.log(c)
-                    return <Cell /> 
+                board?.map((row, i) => {
+                    return (
+                        <div>
+                            {row}
+                        </div>
+                    )
                 })
-                
-                // this.state.report.map(({ monthlytarget }) => Object.entries(monthlytarget))
-                // .flat()
-                // .map(([key,value], index) => (
-                //     <tr key={index}>
-                //     </tr>
-                // ));
-                
-                    // for(let i = 0; i < row.length; i++) {
-                    //     console.log('yooooo')
-                    //     return <Cell key={getRandom()} val={row[i]} />
-                    // }
             }
         </div>
     )
