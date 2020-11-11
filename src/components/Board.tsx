@@ -12,16 +12,16 @@ const Board: React.FC<Props> = () => {
 
     useEffect(() => {
         let newBoard = []
-        let count = 1;
         for (let i = 0; i < 10; i++) {
             let newRow = []
             for (let j = 0; j < 10; j++) {
-                newRow.push(count++)
+                newRow.push(0)
             }
             newBoard.push(newRow)
         }
         setBoard(newBoard)
     }, [])
+
 
     function getRandom(min: number = 0, max: number = 25000000) {
         return Math.random() * (max - min) + min;
@@ -44,15 +44,11 @@ const Board: React.FC<Props> = () => {
                     board?.map((row, i) => {
                         return (
                             row.map((cell, index) => {
-                                return (
-                                    <div 
-                                        key={cell}
-                                        style={{
-                                            backgroundColor: 'lightblue',
-                                        }}
-                                    >
-                                        {cell}
-                                    </div>
+                                return ( 
+                                    <Cell 
+                                        key={index}
+                                        val={cell}
+                                    />
                                 )
                             })
                         )
