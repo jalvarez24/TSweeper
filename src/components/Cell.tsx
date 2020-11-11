@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Cell.css'
 
 interface Props {
     val?: number
@@ -7,8 +8,10 @@ interface Props {
 const Cell: React.FC<Props> = ({ val }) => {
 
     return (
-        <div>
-            Cell: {val}
+        <div
+        className='cell'
+        >
+            {val}
         </div>
     )
 }
