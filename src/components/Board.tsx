@@ -19,6 +19,17 @@ const Board: React.FC<Props> = () => {
             }
             newBoard.push(newRow)
         }
+        for(let i = 0; i < 10; i++) {
+            while(true) {
+                let x = Math.floor(getRandom(0, 10))
+                let y = Math.floor(getRandom(0, 10))
+                console.log(x)
+                if(newBoard[x][y] !== 1) {
+                    newBoard[x][y] = 1
+                    break
+                }
+            }
+        }
         setBoard(newBoard)
     }, [])
 
@@ -35,7 +46,8 @@ const Board: React.FC<Props> = () => {
                 style={{
                     backgroundColor: 'lightgrey',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(10, 25px)',
+                    gridTemplateColumns: 'repeat(10, 40px)',
+                    gridTemplateRows: 'repeat(10, 40px)',
                     gap: '20px',
                     justifyContent: 'center',
                 }}
