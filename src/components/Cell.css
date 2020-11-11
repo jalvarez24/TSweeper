@@ -1,3 +1,22 @@
+.cell, .unclicked-cell {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-user-select: none;
+    user-select: none;
+}
+
 .cell {
     background-color: lightblue;
+}
+
+.unclicked-cell {
+    background-color: aquamarine;
+    transition: 0.3s;
+}
+
+.unclicked-cell:hover{ 
+    background-color: pink;
+    cursor: pointer;
 }

@@ -6,12 +6,23 @@ interface Props {
 }
 
 const Cell: React.FC<Props> = ({ val }) => {
+    
+    const [clicked, setClicked] = useState(false)
 
     return (
         <div
-        className='cell'
+        className={clicked ? 'cell' : 'unclicked-cell'}
+        onClick={() => {
+            setClicked(true);
+        }}
         >
-            {val}
+            {
+                !clicked ?
+                null:
+                val === 1 ?
+                '💣':
+                null
+            }
         </div>
     )
 }

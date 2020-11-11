@@ -23,7 +23,6 @@ const Board: React.FC<Props> = () => {
             while(true) {
                 let x = Math.floor(getRandom(0, 10))
                 let y = Math.floor(getRandom(0, 10))
-                console.log(x)
                 if(newBoard[x][y] !== 1) {
                     newBoard[x][y] = 1
                     break
