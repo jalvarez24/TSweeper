@@ -1,0 +1,18 @@
+.boardContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    background-color: lightgrey;
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
