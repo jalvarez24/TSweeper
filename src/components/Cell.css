@@ -1,4 +1,4 @@
-.cell, .unclicked-cell {
+.clicked-cell, .unclicked-cell {
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -7,13 +7,13 @@
     user-select: none;
 }
 
-.cell {
+.clicked-cell {
     background-color: lightblue;
 }
 
 .unclicked-cell {
     background-color: aquamarine;
-    transition: 0.3s;
+    transition: 0.6s;
 }
 
 .unclicked-cell:hover{ 
