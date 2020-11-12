@@ -1,10 +1,13 @@
 .clicked-cell, .unclicked-cell {
-    padding: 10px;
+    padding: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     -moz-user-select: none;
     user-select: none;
+    border-style: groove;
+    border-width: 4px;
+    border-radius: 5px;
 }
 
 .clicked-cell {

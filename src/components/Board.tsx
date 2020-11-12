@@ -54,6 +54,10 @@ const Board: React.FC<Props> = () => {
         return newBoard
     }
 
+    function clearEmptyArea() {
+
+    }
+
     function getRandom(min: number = 0, max: number = 25000000) {
         return Math.random() * (max - min) + min;
     }
@@ -77,7 +81,9 @@ const Board: React.FC<Props> = () => {
             </div>
             :
             <div>
-                Board:
+                <div className='board-label'>
+                    TSWeeper:
+                </div>
                 <div className='board'>
                     {
                         board?.map((row, i) => {
